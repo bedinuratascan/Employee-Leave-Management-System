@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace leave_management.Mappings
 {
-    public class Mapper:Profile
+    public class Maps:Profile
     {
-        public Mapper()
+        public Maps()
         {
             CreateMap<LeaveType, DetailsLeaveTypeVM>().ReverseMap();
             CreateMap<LeaveType, CreateLeaveTypeVM>().ReverseMap();

@@ -1,5 +1,0 @@
-﻿migration process:
-
-add-migration AddedEmployeeDataPoints
-remove-migration AddedEmployeeDataPoints
-Update-Database // migration ardından updata yapmayı unutma.
