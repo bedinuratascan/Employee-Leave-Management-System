@@ -74,9 +74,15 @@ namespace leave_management.Controllers
             return View(model);
         }
         // GET: LeaveAllocation/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
-            return View();
+            var employee = _mapper.Map<EmployeeVM>(_userManager.FindByIdAsync(id).Result);
+            var allocations = _mapper.Map<List<LeaveAllocationVM>>(_leaveallocationrepo.GetLeaveAllocationsByEmployee(id));
+            var model = new ViewAllocationsVM{
+                Employee = employee,
+                LeaveAllocations = allocations,
+            };
+            return View(model);
         }
 
         // GET: LeaveAllocation/Create
